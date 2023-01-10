@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/style.css" rel="stylesheet" />
+    <title>Form validation</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="modal">Форма успешно отправлена</div>
+      <form id="form" class="form-add">
+        <span class="close-form"></span>
+        <h1>Форма обратной связи</h1>
+
+        <label for="name">Имя*</label>
+        <div class="input-box">
+          <input
+            data-required="true"
+            data-min-length="2"
+            name="name"
+            type="text"
+            pattern="[A-Za-zА-Яа-яЁё]{2,}"
+            title="Только буквы мин кол-во символов 2"
+            id="name"
+            class="inputs"
+            placeholder="Имя"
+          />
+        </div>
+
+        <label for="family-name">Фамилия*</label>
+        <div class="input-box">
+          <input
+            data-required="true"
+            data-min-length="2"
+            pattern="[A-Za-zА-Яа-яЁё]{2,}"
+            title="Только буквы мин кол-во символов 2"
+            type="text"
+            id="family-name"
+            class="inputs"
+            placeholder="Фамилия"
+          />
+        </div>
+
+        <label for="phone">Телефон*</label>
+        <div class="input-box">
+          <input
+            data-required="true"
+            data-number="number"
+            type="text"
+            id="phone"
+            class="inputs phone_mask"
+            placeholder="+7 (999) 999-99-99"
+          />
+        </div>
+
+        <label for="email">Email*</label>
+        <div class="input-box">
+          <input
+            data-required="true"
+            data-email="email"
+            name="email"
+            type="text"
+            id="email"
+            class="inputs"
+            placeholder="email"
+          />
+        </div>
+
+        <button type="submit" id="submit">Отправить</button>
+      </form>
+      <button class="open__form">Открыть форму</button>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.js"
+      type="text/javascript"
+    ></script>
+    <script src="/script.js"></script>
+  </body>
+</html>
